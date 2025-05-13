@@ -22,6 +22,30 @@ Network Ciudad.
 ![image](https://github.com/user-attachments/assets/dd3c28c2-120a-4c3e-a148-05eef56b1794)
 
 
+(Servidores y DMZ)
+
+
+![image](https://github.com/user-attachments/assets/dafa34f8-59b2-4445-aeae-2c281b984bb9)
+
+
+Servidores en la red interna.
+
+
+![image](https://github.com/user-attachments/assets/8c3affbe-6487-441e-8cf9-7c2f5dd9fdbd)
+
+
+Sistema de vigilancia con WPA2-PSK y SSID.
+
+
+![image](https://github.com/user-attachments/assets/f29be790-066f-43af-b39b-dab5465017a0)
+
+
+
+
+
+
+
+
 
 
 
