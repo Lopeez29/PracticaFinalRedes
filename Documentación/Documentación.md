@@ -230,5 +230,87 @@ Estos cálculos se repiten para cada subred, adaptando el tercer octeto al núme
 - El uso de direcciones independientes por VLAN mejora el rendimiento y simplifica el enrutamiento interno.
 
 
+## Paso 4: Capa de Transporte – Selección de Protocolos y Cálculo del Tamaño de Ventana
+
+### 1. Selección de Protocolos de Transporte
+
+En la red se emplean los siguientes protocolos según el tipo de servicio y sus requisitos:
+
+- **TCP (Transmission Control Protocol)**  
+  Se utiliza para servicios que requieren **alta fiabilidad**, control de errores y entrega ordenada.  
+  **Aplicaciones:**  
+  - Transferencia de archivos (FTP/SCP)  
+  - Actualización de bases de datos  
+  - Navegación web (HTTP/HTTPS)  
+  - Correo electrónico (SMTP, IMAP, POP3)
+
+- **UDP (User Datagram Protocol)**  
+  Se selecciona para servicios de **tiempo real** que priorizan velocidad sobre fiabilidad.  
+  **Aplicaciones:**  
+  - Transmisión de video/audio (streaming)  
+  - Cámaras de seguridad en vivo  
+  - Alertas de tráfico y sensores IoT
+
+---
+
+### 2. Cálculo del Tamaño de Ventana en TCP
+
+Para calcular la **ventana óptima de recepción** (Window size) se utiliza la fórmula:
+
+\[
+\text{Ventana óptima (bits)} = \text{Ancho de banda (bps)} \times \text{RTT (segundos)}
+\]
+
+#### Parámetros utilizados:
+- Ancho de banda: **100 Mbps** = \(100 \times 10^6\) bps
+- RTT (tiempo de ida y vuelta): **50 ms** = 0.05 s
+
+#### Cálculo:
+\[
+\text{Ventana óptima} = 100 \times 10^6 \, \text{bps} \times 0.05 \, \text{s} = 5 \times 10^6 \, \text{bits} = 625000 \, \text{bytes}
+\]
+
+---
+
+#### Cálculo de Segmentos (MSS)
+
+Si asumimos un **MSS (Maximum Segment Size)** de 1500 bytes (típico en Ethernet):
+
+\[
+\text{Segmentos en tránsito} = \frac{625000 \, \text{bytes}}{1500 \, \text{bytes/segmento}} \approx 417 \, \text{segmentos}
+\]
+
+> Por tanto, el emisor puede tener **hasta 417 segmentos MSS en tránsito** antes de recibir confirmaciones (ACK), manteniendo el canal completamente ocupado.
+
+
+## Paso 5: Capa de Aplicación – Servicios, Multiplexación y Multimedia
+
+### 1. Implementación de Servicios y Resolución de Nombres
+
+####  Configuración de Servidores
+
+Se implementaron servidores dedicados para los siguientes servicios en ambas redes (ciudad y edificio gubernamental):
+
+| Servicio    | Protocolo | Función principal                                  |
+|-------------|-----------|----------------------------------------------------|
+| DNS         | UDP/TCP   | Resolución de nombres internos                    |
+| FTP/SFTP    | TCP       | Transferencia segura de archivos entre nodos      |
+| HTTP/HTTPS  | TCP       | Servicios web y acceso a plataformas multimedia    |
+
+- Los servidores se ubican en VLAN 400 y se conectan a través del switch principal de cada red.
+- El servicio **HTTPS** se prioriza para plataformas administrativas y multimedia debido a su cifrado.
+---
+
+### 2. Servicios Multimedia
+
+#### Transmisión en Tiempo Real
+
+Se utilizan los siguientes métodos para el streaming de cámaras y eventos en vivo:
+
+- **UDP Streaming:** Para cámaras de seguridad IP que transmiten video en tiempo real con baja latencia.
+- **HTTP Adaptive Streaming (DASH):** Para eventos públicos o multimedia educativo, permite adaptar la calidad del video dinámicamente.
+
+
+
 
 
