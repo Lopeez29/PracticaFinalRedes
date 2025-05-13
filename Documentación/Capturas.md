@@ -40,7 +40,10 @@ Sistema de vigilancia con WPA2-PSK y SSID.
 ![image](https://github.com/user-attachments/assets/f29be790-066f-43af-b39b-dab5465017a0)
 
 
+Mapa conceptual.
 
+
+![image](https://github.com/user-attachments/assets/48ab7829-8391-4f06-945a-ea10312ae294)
 
 
 
