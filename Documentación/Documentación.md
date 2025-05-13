@@ -193,6 +193,42 @@ C = B \cdot \log_2(1 + SNR) = 1 \cdot 10^9 \cdot \log_2(1001) \approx 1 \cdot 10
 > Este tipo de enlace proporciona un **canal de alta capacidad y baja latencia**, ideal para el intercambio de grandes volúmenes de datos entre switches, así como entre switches y routers dentro del núcleo de red. La
 
 
+## 1. Diseño del Esquema de Direccionamiento IP
+
+Se implementó un esquema de direccionamiento IPv4 basado en la clase C privada **192.168.x.x**, utilizando la máscara **/24 (255.255.255.0)** para segmentar la red por VLAN en cada switch, tanto en la red de la ciudad como en la red gubernamental.
+
+### Asignación de Bloques de Direcciones
+
+| VLAN | Uso / Función                          | Red asignada      |
+|------|----------------------------------------|-------------------|
+| 100  | Administración / PCs de oficina        | 192.168.100.0/24  |
+| 200  | Voz IP / Teléfonos IP                  | 192.168.200.0/24  |
+| 300  | IoT y sensores                         | 192.168.300.0/24  |
+| 400  | Servicios y servidores                 | 192.168.400.0/24  |
+
+*La misma estructura se aplica tanto en la ciudad como en el edificio gubernamental, diferenciando por router o dominio.*
+
+---
+
+### Cálculo por Segmento (Ejemplo para VLAN 100)
+
+- **Red:** 192.168.100.0/24
+- **Máscara:** 255.255.255.0
+- **Broadcast:** 192.168.100.255
+- **Rango de direcciones válidas:** 192.168.100.1 – 192.168.100.254
+- **Cantidad de hosts posibles:** 254
+
+Estos cálculos se repiten para cada subred, adaptando el tercer octeto al número de VLAN.
+
+---
+
+### Justificación de la Elección
+
+- Se seleccionó el bloque **192.168.0.0/16** por ser una dirección privada ampliamente soportada y fácil de implementar.
+- La máscara **/24** permite una segmentación clara y simple por VLAN, con suficiente espacio para hasta 254 hosts por red.
+- Separar por VLAN facilita la gestión, seguridad y control del tráfico entre áreas funcionales (datos, voz, IoT, servidores).
+- El uso de direcciones independientes por VLAN mejora el rendimiento y simplifica el enrutamiento interno.
+
 
 
 
