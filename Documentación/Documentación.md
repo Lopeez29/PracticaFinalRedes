@@ -120,72 +120,54 @@ Se usan cables cruzados para conexiones entre dispositivos del mismo tipo (por e
 Se utilizan cables directos para conexiones entre dispositivos diferentes (por ejemplo, PC a switch, router a switch).
 
 
-Recuento de Dispositivos por Zona
+## Recuento de Dispositivos por Zona
 
+### Edificio Gubernamental 
 
-- Edificio Gubernamental.
-Routers:
+| Tipo de Dispositivo         | Cantidad Aproximada | Observaciones                                      |
+|----------------------------|---------------------|---------------------------------------------------|
+| Router                     | 1                   | Con enlace serial hacia la red de la ciudad       |
+| Switch Multicapa           | 1                   | Actúa como núcleo de distribución                 |
+| Switches de acceso         | 5                   | Conectan VLANs de PCs, voz, servicios             |
+| Servidores                 | 4                   | DHCP, DNS, HTTP, EMAIL (zona de servicios)        |
+| PCs                        | 12+                 | Distribuidos en diferentes áreas funcionales      |
+| Teléfonos IP               | 6                   | Integrados en la red de voz IP                    |
+| Dispositivos IoT           | Varios              | Cámaras, sensores, control de acceso              |
+| Otros                      | Varios              | MCU, altavoces, lectores de tarjetas, tablets     |
 
-1 Router con interfaz serial conectada a la ciudad (ej. R-Gob)
+---
 
-Switches:
+### Ciudad Inteligente 
 
-1 Switch Multicapa (centro de distribución)
+| Tipo de Dispositivo         | Cantidad Aproximada | Observaciones                                      |
+|----------------------------|---------------------|---------------------------------------------------|
+| Router                     | 1                   | Con enlace serial al edificio gubernamental       |
+| Switches                   | 4                   | Segmentación por zonas: seguridad, DMZ, etc.      |
+| Servidores                 | 2                   | DHCP, DNS y servidor de borde en DMZ              |
+| PCs                        | 3                   | Estaciones de control                             |
+| Cámaras y sensores         | Varios              | Seguridad pública y vigilancia urbana             |
+| Dispositivos IoT/Energía   | Varios              | Panel solar, batería, sensores ambientales        |
+| Sistema de acceso          | 1                   | Puerta con lector RFID y cerradura electrónica    |
+| Otros                      | Varios              | Megáfono Bluetooth, altavoces, lectores RFID      |
 
-5 Switches de acceso (distribuidos por VLANs/zonas)
+Se utiliza la fórmula de Shannon:  
 
-Servidores:
+$$Donde: C = B * log_2(1+SNR)$$  
 
-Servidores DHCP, DNS, HTTP/HTTPS, EMAIL (ubicados en zona verde)
+Ancho de banda (B)  
 
-PCs:
+SNR: relación señal a ruido determinada.   
+La relación señal a ruido se mide en dB en un ancho de banda es:    
 
-Múltiples PCs (al menos 12), conectados por subred/VLAN
+$$𝑆𝑁𝑅 = 10 𝑙𝑜𝑔_{10}(𝑆𝑁𝑅) = 10^{\frac{SNR}{10}} [dB]$$  
 
-Teléfonos IP:
+1. **Fa/Trenzado de 250Mb**  
+    Cable de cobre categoría 6 con ancho de banda de 250 MHz. 
 
-Varios dispositivos IP Phone (≈ 6) integrados a la red de voz
+    $$C = 2,5 * 10^8 * log_2(1+1000) = 2,5 * 10^8 * log_2(1001) = 2,5 * 10^8 * 9.967 = 2.49 * 10^9bps = 2.49 Gbps$$
 
-Dispositivos IoT:
+   *Este tipo de cable proporciona conexiones repidas entre switches-ordenadores *
 
-Sensores, cámaras, puertas automáticas, control de acceso
-
-Otros:
-
-MCU, tablets, altavoces inteligentes, lectores de tarjetas
-
-- Ciudad Inteligente (lado izquierdo)
-Routers:
-
-1 Router con interfaz serial (conectado al edificio gubernamental)
-
-Switches:
-
-4 Switches para segmentar zonas (seguridad, test, DMZ, etc.)
-
-Servidores:
-
-Servidor DHCP, DNS, y un servidor en la DMZ
-
-PCs:
-
-Al menos 3 PCs de escritorio
-
-Dispositivos de Seguridad Pública:
-
-Cámaras, webcams, sensores de movimiento
-
-Dispositivo de monitoreo de incendios
-
-IoT y Energía:
-
-Panel solar, batería, sensores ambientales
-
-Dispositivos de monitoreo y megáfono Bluetooth
-
-Otros:
-
-Sistema de acceso con lector RFID, puertas inteligentes, altavoces
 
 
 
