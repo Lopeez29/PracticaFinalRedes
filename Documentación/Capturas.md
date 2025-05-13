@@ -9,5 +9,24 @@
   
 He configurado cada pin como salida y, en un bucle infinito, utilizo analogWrite para encender el LED verde (valor 1023) durante 10 s, luego apago verde y enciendo amarillo con PWM 1023 durante 10 s, y finalmente apago amarillo y enciendo rojo con PWM 1023 otros 10 s.
 
+Simulación y envío de paquetes en edificio gubernamental.
+
+
+![image](https://github.com/user-attachments/assets/aa6f1730-68cd-4d04-ba22-5face8e50cd6)
+
+
+
+Network Ciudad.
+
+
+![image](https://github.com/user-attachments/assets/dd3c28c2-120a-4c3e-a148-05eef56b1794)
+
+
+
+
+
+
+
+
 
 
