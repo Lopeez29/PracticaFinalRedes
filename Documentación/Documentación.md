@@ -1,6 +1,8 @@
 Edificio Gubernamental:
 Vtp domain: VTPserver
 Password:uaxlab
+
+
 Edificios:
 Vtp domain: Ciudad
 Password: uaxlab
@@ -116,4 +118,74 @@ Esto mejora la eficiencia y el rendimiento en las comunicaciones entre PCs, swit
 Se usan cables cruzados para conexiones entre dispositivos del mismo tipo (por ejemplo, switch-switch o router-router) cuando el dispositivo no soporta auto-MDI/MDIX.
 
 Se utilizan cables directos para conexiones entre dispositivos diferentes (por ejemplo, PC a switch, router a switch).
+
+
+Recuento de Dispositivos por Zona
+
+
+- Edificio Gubernamental.
+Routers:
+
+1 Router con interfaz serial conectada a la ciudad (ej. R-Gob)
+
+Switches:
+
+1 Switch Multicapa (centro de distribución)
+
+5 Switches de acceso (distribuidos por VLANs/zonas)
+
+Servidores:
+
+Servidores DHCP, DNS, HTTP/HTTPS, EMAIL (ubicados en zona verde)
+
+PCs:
+
+Múltiples PCs (al menos 12), conectados por subred/VLAN
+
+Teléfonos IP:
+
+Varios dispositivos IP Phone (≈ 6) integrados a la red de voz
+
+Dispositivos IoT:
+
+Sensores, cámaras, puertas automáticas, control de acceso
+
+Otros:
+
+MCU, tablets, altavoces inteligentes, lectores de tarjetas
+
+- Ciudad Inteligente (lado izquierdo)
+Routers:
+
+1 Router con interfaz serial (conectado al edificio gubernamental)
+
+Switches:
+
+4 Switches para segmentar zonas (seguridad, test, DMZ, etc.)
+
+Servidores:
+
+Servidor DHCP, DNS, y un servidor en la DMZ
+
+PCs:
+
+Al menos 3 PCs de escritorio
+
+Dispositivos de Seguridad Pública:
+
+Cámaras, webcams, sensores de movimiento
+
+Dispositivo de monitoreo de incendios
+
+IoT y Energía:
+
+Panel solar, batería, sensores ambientales
+
+Dispositivos de monitoreo y megáfono Bluetooth
+
+Otros:
+
+Sistema de acceso con lector RFID, puertas inteligentes, altavoces
+
+
 
