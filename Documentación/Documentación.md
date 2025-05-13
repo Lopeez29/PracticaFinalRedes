@@ -176,5 +176,23 @@ $$𝑆𝑁𝑅 = 10 𝑙𝑜𝑔_{10}(𝑆𝑁𝑅) = 10^{\frac{SNR}{10}} [dB]$$
    $$C = B \cdot \log_2(1 + S/N) = 20 \times 10^6 \cdot \log_2(101) \approx 20 \times 10^6 \cdot 6.658 = 133.16 \text{ Mbps}$$
 
 
+   ### Enlace entre Switches – Cable de Cobre Gigabit Ethernet
+
+Se utiliza **cableado de cobre** con soporte para **Gigabit Ethernet (1 Gbps)** en las conexiones troncales entre switches y hacia los routers. Estos enlaces permiten un transporte de datos de alta velocidad en la infraestructura interna de la red.
+
+- **Tipo de cable:** Cobre UTP categoría 5e/6
+- **Ancho de banda estimado:** 1 GHz
+- **Cálculo teórico de capacidad** utilizando la fórmula de capacidad de canal de Shannon:
+
+\[
+C = B \cdot \log_2(1 + SNR) = 1 \cdot 10^9 \cdot \log_2(1001) \approx 1 \cdot 10^9 \cdot 9.97 = 9.97 \cdot 10^9 \text{ bps}
+\]
+
+- **Resultado:** ≈ **9.97 Gbps** teóricos en condiciones ideales
+
+> Este tipo de enlace proporciona un **canal de alta capacidad y baja latencia**, ideal para el intercambio de grandes volúmenes de datos entre switches, así como entre switches y routers dentro del núcleo de red. La
+
+
+
 
 
