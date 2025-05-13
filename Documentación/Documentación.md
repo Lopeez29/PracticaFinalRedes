@@ -98,3 +98,22 @@ Internet: Esta red se conecta a la red de ciudad mediante un enlace serial WAN, 
 
 3. Conectividad entre Zonas
 Ambas redes están interconectadas mediante un enlace serial punto a punto, que permite el enrutamiento entre los dominios y centraliza el acceso a servicios comunes como Internet o DNS.
+
+
+Tipos de Enlace Utilizados
+El diseño de red implementa diferentes tipos de enlaces físicos adaptados a las necesidades de cada zona, considerando la velocidad, confiabilidad y tipo de dispositivo:
+
+1. Enlaces de Cobre (Ethernet)
+Se utiliza cableado UTP de cobre (categoría 5e o superior) para la mayoría de las conexiones locales.
+
+Se implementan enlaces Fast Ethernet (100 Mbps) y Gigabit Ethernet (1000 Mbps), según la capacidad de los equipos involucrados.
+
+Todas las conexiones están configuradas en modo full-duplex, lo que permite transmisión y recepción simultánea sin colisiones, gracias a la eliminación del dominio compartido de colisión.
+
+Esto mejora la eficiencia y el rendimiento en las comunicaciones entre PCs, switches, routers y servidores.
+
+2. Cables Directos y Cruzados
+Se usan cables cruzados para conexiones entre dispositivos del mismo tipo (por ejemplo, switch-switch o router-router) cuando el dispositivo no soporta auto-MDI/MDIX.
+
+Se utilizan cables directos para conexiones entre dispositivos diferentes (por ejemplo, PC a switch, router a switch).
+
