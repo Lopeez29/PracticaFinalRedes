@@ -10,6 +10,7 @@ Mapa Conceptual:
 
 Capturas:
 
+[Documentación/Capturas.md](./Documentación/Capturas.md)
 
 Documentación:
 
