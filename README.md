@@ -5,6 +5,8 @@ https://github.com/Lopeez29/PracticaFinalRedes.git
 
 Mapa Conceptual:
 
+[Mapa Conceptual/PracticaFinalRedes (2).drawio](./Mapa%20Conceptual/PracticaFinalRedes%20(2).drawio)
+
 
 Capturas:
 
