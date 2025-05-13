@@ -73,3 +73,28 @@ El **modelo TCP/IP**, base de Internet, es un modelo más práctico y consta de 
 | Capa 5    | Sesión                      | Aplicación (combinada)        |
 | Capa 6    | Presentación                | Aplicación (combinada)        |
 | Capa 7    | Aplicación                  | Aplicación (combinada)        |
+
+
+## Diseño Lógico y Segmentación: 
+
+Zonas Genéricas, Transporte e Internet
+1. Zona Genérica – Ciudad Inteligente
+Descripción: Esta zona representa distintos servicios distribuidos en la ciudad: control de acceso, vigilancia IoT, sensores ambientales, multimedia, salud, infraestructura crítica y comunicación ciudadana.
+
+Segmentación: Está dividida por áreas funcionales (seguridad, monitoreo, salud, etc.) mediante VLANs, con switches y routers que gestionan el tráfico internamente.
+
+Transporte: El tráfico se distribuye a través de switches de acceso y un router central de la ciudad que actúa como punto de salida. La conectividad se realiza mediante enlaces Ethernet.
+
+Internet: El acceso a Internet se canaliza a través de un servidor de borde en la DMZ de la ciudad. Hay presencia de servidores DNS, DHCP, y HTTP para la gestión interna y externa.
+
+2. Zona Genérica – Edificio Gubernamental
+Descripción: Esta zona simula una oficina administrativa conectada a una red institucional mayor. Contiene equipos de trabajo, servidores y sistemas internos.
+
+Segmentación: Se agrupa por funciones administrativas, DMZ y servidores. Cada sección está conectada mediante switches y estructurada en VLANs.
+
+Transporte: El transporte de datos se realiza por medio de enlaces de cobre, incluyendo conexiones cruzadas entre switches y routers para mejorar la redundancia y eficiencia.
+
+Internet: Esta red se conecta a la red de ciudad mediante un enlace serial WAN, por donde accede a los servicios de Internet y servidores externos, usando NAT si es necesario.
+
+3. Conectividad entre Zonas
+Ambas redes están interconectadas mediante un enlace serial punto a punto, que permite el enrutamiento entre los dominios y centraliza el acceso a servicios comunes como Internet o DNS.
