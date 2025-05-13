@@ -169,5 +169,12 @@ $$𝑆𝑁𝑅 = 10 𝑙𝑜𝑔_{10}(𝑆𝑁𝑅) = 10^{\frac{SNR}{10}} [dB]$$
    *Este tipo de cable proporciona conexiones repidas entre switches-ordenadores *
 
 
+   2. **Acces-point/Inalámbrico**
+   Enlaces inalambricos de wifi en cada access-point.
+
+
+   $$C = B \cdot \log_2(1 + S/N) = 20 \times 10^6 \cdot \log_2(101) \approx 20 \times 10^6 \cdot 6.658 = 133.16 \text{ Mbps}$$
+
+
 
 
